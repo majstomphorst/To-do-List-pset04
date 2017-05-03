@@ -11,6 +11,7 @@ import SQLite
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
+    //MARK: properties
     @IBOutlet weak var toDoTableView: UITableView!
 
     
@@ -29,19 +30,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     
-    
+    //MARK: tableView
+    // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lst.count
     }
     
+    // content of cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = toDoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ToDoUITableViewCell
         
         cell.toDoItem.text = lst[indexPath.row]
         
         return cell
-        
     }
+    
+    //MARK: actions
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            print("delette")
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
+    }
+    
+    
 
 
 }
