@@ -20,8 +20,9 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        database?.rideDatabase(text: "second!")
-        database?.readDatabase()
+        database?.rideDatabase(text: "77")
+        let concentOfDatabase = database?.readDatabase()
+        print(concentOfDatabase!)
     }
 
     override func didReceiveMemoryWarning() {

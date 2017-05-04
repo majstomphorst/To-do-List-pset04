@@ -15,9 +15,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var toDoTableView: UITableView!
     
     let database = Database()
+    var concentOfDatabase = [String]()
     
-    let lst = ["Get milk", "Get honey", "Get chicken"]
-
+    override func viewDidAppear(_ animated: Bool) {
+        concentOfDatabase = database.readDatabase()
+        
+        self.toDoTableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +45,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: tableView
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lst.count
+        print("count database \(concentOfDatabase.count)")
+        return concentOfDatabase.count
     }
     
     // content of cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = toDoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ToDoUITableViewCell
         
-        cell.toDoItem.text = lst[indexPath.row]
+        cell.toDoItem.text = concentOfDatabase[indexPath.row]
         
         return cell
     }

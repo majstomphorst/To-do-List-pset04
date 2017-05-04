@@ -63,19 +63,20 @@ class Database {
         }
     }
     
-    func readDatabase() {
+    func readDatabase() -> [String] {
         
-        var concentDatabase = []
+        var concentOfDatabase = [String]()
         
         do {
             for item in try connection!.prepare(todoTable) {
-                print("id: \(item[id]),done?: \(item[check]) ,name: \(item[todoText])")
+                concentOfDatabase.append("id: \(item[id]),done?: \(item[check]) ,name: \(item[todoText])")
             }
-            
             
         } catch {
             print("read database failed \(error)")
         }
+        
+        return concentOfDatabase
     }
     
     func deleteFromDatabase() {
