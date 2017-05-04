@@ -112,6 +112,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxT-Bx-HBU">
                                         <rect key="frame" x="0.0" y="70.5" width="343" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="saveButton:" destination="pzC-O6-cVY" eventType="touchUpInside" id="8kS-ay-7pe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -132,6 +135,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add item" id="sUD-J6-COT" userLabel="Add item"/>
+                    <connections>
+                        <outlet property="inputField" destination="ygT-ae-WU2" id="xRH-JO-1nf"/>
+                        <outlet property="label" destination="U1a-3T-j6g" id="dja-lZ-MTk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5m7-HY-IaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

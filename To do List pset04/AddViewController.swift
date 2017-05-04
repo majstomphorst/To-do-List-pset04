@@ -11,6 +11,11 @@ import SQLite
 
 class AddViewController: UIViewController {
 
+    //MARK: outlets
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var inputField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +25,10 @@ class AddViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: actions
+    @IBAction func saveButton(_ sender: UIButton) {
     }
     
 
