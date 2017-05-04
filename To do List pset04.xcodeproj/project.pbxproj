@@ -15,7 +15,7 @@
 		282F11A21EB8CF9100DB053F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282F11A01EB8CF9100DB053F /* LaunchScreen.storyboard */; };
 		283AFB931EBA2EB700F82A83 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AFB921EBA2EB700F82A83 /* AddViewController.swift */; };
 		283AFB9C1EBA50B000F82A83 /* ToDoUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AFB9B1EBA50B000F82A83 /* ToDoUITableViewCell.swift */; };
-		283AFB9E1EBB04D900F82A83 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AFB9D1EBB04D900F82A83 /* ViewControllerExtensions.swift */; };
+		283AFBA01EBB2D0700F82A83 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283AFB9F1EBB2D0700F82A83 /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,7 @@
 		282F11A31EB8CF9100DB053F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		283AFB921EBA2EB700F82A83 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		283AFB9B1EBA50B000F82A83 /* ToDoUITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoUITableViewCell.swift; sourceTree = "<group>"; };
-		283AFB9D1EBB04D900F82A83 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		283AFB9F1EBB2D0700F82A83 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,13 +132,13 @@
 				282F11971EB8CF9100DB053F /* AppDelegate.swift */,
 				282003791EB8D2DF00E59323 /* SQLite.xcodeproj */,
 				282F11991EB8CF9100DB053F /* ViewController.swift */,
+				283AFB9F1EBB2D0700F82A83 /* Database.swift */,
 				283AFB921EBA2EB700F82A83 /* AddViewController.swift */,
 				282F119B1EB8CF9100DB053F /* Main.storyboard */,
 				282F119E1EB8CF9100DB053F /* Assets.xcassets */,
 				282F11A01EB8CF9100DB053F /* LaunchScreen.storyboard */,
 				282F11A31EB8CF9100DB053F /* Info.plist */,
 				283AFB9B1EBA50B000F82A83 /* ToDoUITableViewCell.swift */,
-				283AFB9D1EBB04D900F82A83 /* ViewControllerExtensions.swift */,
 			);
 			path = "To do List pset04";
 			sourceTree = "<group>";
@@ -274,10 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283AFBA01EBB2D0700F82A83 /* Database.swift in Sources */,
 				282F119A1EB8CF9100DB053F /* ViewController.swift in Sources */,
 				282F11981EB8CF9100DB053F /* AppDelegate.swift in Sources */,
 				283AFB931EBA2EB700F82A83 /* AddViewController.swift in Sources */,
-				283AFB9E1EBB04D900F82A83 /* ViewControllerExtensions.swift in Sources */,
 				283AFB9C1EBA50B000F82A83 /* ToDoUITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

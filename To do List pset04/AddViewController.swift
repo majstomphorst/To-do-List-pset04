@@ -29,6 +29,9 @@ class AddViewController: UIViewController {
     
     //MARK: actions
     @IBAction func saveButton(_ sender: UIButton) {
+        
+       // let insert =
+        self.label.text = "clicked!"
     }
     
 

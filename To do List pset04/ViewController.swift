@@ -13,26 +13,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //MARK: properties
     @IBOutlet weak var toDoTableView: UITableView!
+    
+    let database = Database()
+    
+    let lst = ["Get milk", "Get honey", "Get chicken"]
 
-    //MARK: SQL Database
-    var database: Connection?
-    
-    let todoTable = Table("todoTable")
-    let id = Expression<Int64>("id")
-    let check = Expression<Bool>("check")
-    let todoText = Expression<String>("todoText")
-    
-    let lst = ["Get millk", "Get honey", "Get chicken"]
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // creating the database and create the table's
-        setupDatabase()
-
-         
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,35 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // handle delete (by removing the data from your array and updating the tableview)
         }
     }
-    
-    //MARK: database functions
-    
-    // creating a empty database.sqlite3 file
-    func setupDatabase() {
-        
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        
-        do {
-            database = try Connection("\(path)/db.sqlite3")
-            
-            createTable()
-            
-        } catch {
-            print("Cant connect to database:\(error)")
-        }
-    }
-    
-    func createTable() {
-        do {
-            try database!.run(todoTable.create(ifNotExists: true) { t in
-                t.column(id, primaryKey: .autoincrement)
-                t.column(check)
-                t.column(todoText, unique: true)
-            } )
-        } catch {
-            print("faild to create table\(error)")
-        }
-    }
+
 
 
 }
