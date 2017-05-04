@@ -70,7 +70,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WFT-4A-3xr">
                             <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="pzC-O6-cVY" kind="show" id="hk7-OG-Qus"/>
+                                <segue destination="pzC-O6-cVY" kind="show" identifier="AddViewController" id="hk7-OG-Qus"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

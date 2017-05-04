@@ -20,8 +20,7 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // print(type(of: databaase))
-        // Do any additional setup after loading the view.
+        database?.saveToDatabase()
     }
 
     override func didReceiveMemoryWarning() {

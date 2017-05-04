@@ -51,9 +51,18 @@ class Database {
         }
     }
     
-//    func saveToDatabase(String) {
-//        
-//    }
+    func saveToDatabase(text: String, completed: Bool = false) {
+        let insert = todoTable.insert(todoText <- text, check <- completed)
+        
+        do {
+            let rowId = try connection!.run(insert)
+            print(rowId)
+        } catch {
+            print("database insertion failed\(error)")
+            
+        }
+        
+    }
     
     
 }
