@@ -61,7 +61,6 @@ class Database {
             print("database insertion failed\(error)")
             
         }
-        
     }
     
     

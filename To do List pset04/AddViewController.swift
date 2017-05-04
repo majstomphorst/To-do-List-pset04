@@ -20,7 +20,7 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        database?.saveToDatabase()
+        database?.saveToDatabase(text: "second!")
     }
 
     override func didReceiveMemoryWarning() {
