@@ -69,7 +69,9 @@ class Database {
         
         do {
             for item in try connection!.prepare(todoTable) {
-                concentOfDatabase.append("id: \(item[id]),done: \(item[check]) ,name: \(item[todoText])")
+                concentOfDatabase.append(item[todoText])
+                
+                // concentOfDatabase.append("id: \(item[id]),done: \(item[check]) ,name: \(item[todoText])")
             }
             
         } catch {

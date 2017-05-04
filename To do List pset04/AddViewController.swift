@@ -15,8 +15,6 @@ class AddViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var inputField: UITextField!
     
-    var database: Database?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Database.sharedinstance.
@@ -32,6 +30,10 @@ class AddViewController: UIViewController {
     @IBAction func saveButton(_ sender: Any) {
         Database.sharedinstance.rideDatabase(text: inputField.text!)
         
+        // error handeling!
+        
+        self.label.text = ""
+        navigationController?.popViewController(animated: true)
     }
     
 
