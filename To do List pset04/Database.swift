@@ -69,6 +69,8 @@ class Database {
         
         do {
             for item in try connection!.prepare(todoTable) {
+                
+                // create dic? with the true false for ui green/ red and the text
                 concentOfDatabase.append(item[todoText])
                 
                 // concentOfDatabase.append("id: \(item[id]),done: \(item[check]) ,name: \(item[todoText])")
@@ -80,9 +82,21 @@ class Database {
         return concentOfDatabase
     }
     
-    func deleteFromDatabase() {
-        // let insert = todoTable.delete()
+    func updateDatabase(row: Int) {
+        
     }
     
-    
+    func dropRowFromDatabase(text: String) {
+        print(type(of: text))
+        print(text)
+        
+        
+        let dropRow = todoTable.filter(todoText == text)
+        do {
+            try connection!.run(dropRow.delete())
+            print("is deleted. I hope")
+        } catch {
+            print("error with deleting")
+        }
+    }
 }

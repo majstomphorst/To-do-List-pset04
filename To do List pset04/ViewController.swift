@@ -59,7 +59,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            print("delette")
+            
+            // printing whats in the row
+            print(concentOfDatabase[indexPath.row])
+            
+            Database.sharedinstance.dropRowFromDatabase(text: concentOfDatabase[indexPath.row])
+            
+            self.toDoTableView.reloadData()
             // handle delete (by removing the data from your array and updating the tableview)
         }
     }
