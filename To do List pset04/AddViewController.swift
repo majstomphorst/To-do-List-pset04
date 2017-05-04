@@ -20,7 +20,8 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        database?.saveToDatabase(text: "second!")
+        database?.rideDatabase(text: "second!")
+        database?.readDatabase()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +33,7 @@ class AddViewController: UIViewController {
     @IBAction func saveButton(_ sender: UIButton) {
         
         self.label.text = "clicked!"
+        
     }
     
 

@@ -46,12 +46,12 @@ class Database {
                 t.column(check)
                 t.column(todoText, unique: true)
             } )
-        } catch {
+        }  catch {
             print("faild to create table\(error)")
         }
     }
     
-    func saveToDatabase(text: String, completed: Bool = false) {
+    func rideDatabase(text: String, completed: Bool = false) {
         let insert = todoTable.insert(todoText <- text, check <- completed)
         
         do {
@@ -61,6 +61,25 @@ class Database {
             print("database insertion failed\(error)")
             
         }
+    }
+    
+    func readDatabase() {
+        
+        var concentDatabase = []
+        
+        do {
+            for item in try connection!.prepare(todoTable) {
+                print("id: \(item[id]),done?: \(item[check]) ,name: \(item[todoText])")
+            }
+            
+            
+        } catch {
+            print("read database failed \(error)")
+        }
+    }
+    
+    func deleteFromDatabase() {
+        // let insert = todoTable.delete()
     }
     
     
