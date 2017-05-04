@@ -14,11 +14,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: properties
     @IBOutlet weak var toDoTableView: UITableView!
     
-    let database = Database()
     var concentOfDatabase = [String]()
     
     override func viewDidAppear(_ animated: Bool) {
-        concentOfDatabase = database.readDatabase()
+        concentOfDatabase = Database.sharedinstance.readDatabase()
         
         self.toDoTableView.reloadData()
     }
@@ -34,18 +33,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddViewController" {
-            let destVC = segue.destination as! AddViewController
-            destVC.database = database
-        }
-    }
-    
-    
     //MARK: tableView
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count database \(concentOfDatabase.count)")
         return concentOfDatabase.count
     }
     

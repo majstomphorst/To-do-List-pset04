@@ -19,10 +19,8 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Database.sharedinstance.
         
-        database?.rideDatabase(text: "77")
-        let concentOfDatabase = database?.readDatabase()
-        print(concentOfDatabase!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,9 +29,8 @@ class AddViewController: UIViewController {
     }
     
     //MARK: actions
-    @IBAction func saveButton(_ sender: UIButton) {
-        
-        self.label.text = "clicked!"
+    @IBAction func saveButton(_ sender: Any) {
+        Database.sharedinstance.rideDatabase(text: inputField.text!)
         
     }
     

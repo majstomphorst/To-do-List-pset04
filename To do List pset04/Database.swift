@@ -11,15 +11,17 @@ import SQLite
 
 class Database {
     
+    static let sharedinstance = Database()
+    
     //MARK: SQL Database
-    var connection: Connection?
+    private var  connection: Connection?
     
-    let todoTable = Table("todoTable")
-    let id = Expression<Int64>("id")
-    let check = Expression<Bool>("check")
-    let todoText = Expression<String>("todoText")
+    private let todoTable = Table("todoTable")
+    private let id = Expression<Int64>("id")
+    private let check = Expression<Bool>("check")
+    private let todoText = Expression<String>("todoText")
     
-    init() {
+    private init() {
         // creating the database
         setupDatabase()
     }
@@ -28,7 +30,7 @@ class Database {
     func setupDatabase() {
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        print(path)
+        // print(path)
         
         do {
             connection = try Connection("\(path)/db.sqlite3")
@@ -67,7 +69,7 @@ class Database {
         
         do {
             for item in try connection!.prepare(todoTable) {
-                concentOfDatabase.append("id: \(item[id]),done?: \(item[check]) ,name: \(item[todoText])")
+                concentOfDatabase.append("id: \(item[id]),done: \(item[check]) ,name: \(item[todoText])")
             }
             
         } catch {
