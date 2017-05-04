@@ -55,11 +55,9 @@ class Database {
         let insert = todoTable.insert(todoText <- text, check <- completed)
         
         do {
-            let rowId = try connection!.run(insert)
-            print(rowId)
+            try connection!.run(insert)
         } catch {
             print("database insertion failed\(error)")
-            
         }
     }
     
@@ -75,7 +73,6 @@ class Database {
         } catch {
             print("read database failed \(error)")
         }
-        
         return concentOfDatabase
     }
     
