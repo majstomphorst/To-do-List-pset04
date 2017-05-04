@@ -93,7 +93,43 @@
                     <view key="view" contentMode="scaleToFill" id="WgJ-Er-rKN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j9S-tb-pZF">
+                                <rect key="frame" x="16" y="72" width="343" height="100.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-3T-j6g">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-ae-WU2">
+                                        <rect key="frame" x="0.0" y="30.5" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxT-Bx-HBU">
+                                        <rect key="frame" x="0.0" y="70.5" width="343" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VxT-Bx-HBU" secondAttribute="trailing" id="FDz-em-STa"/>
+                                    <constraint firstAttribute="trailing" secondItem="ygT-ae-WU2" secondAttribute="trailing" id="FrR-2r-vXW"/>
+                                    <constraint firstItem="ygT-ae-WU2" firstAttribute="leading" secondItem="j9S-tb-pZF" secondAttribute="leading" id="Mpj-Xh-VQx"/>
+                                    <constraint firstItem="U1a-3T-j6g" firstAttribute="leading" secondItem="j9S-tb-pZF" secondAttribute="leading" id="v01-ih-UcY"/>
+                                    <constraint firstAttribute="trailing" secondItem="U1a-3T-j6g" secondAttribute="trailing" id="vFQ-Nz-Lzz"/>
+                                    <constraint firstItem="VxT-Bx-HBU" firstAttribute="leading" secondItem="j9S-tb-pZF" secondAttribute="leading" id="z8O-pS-LSC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j9S-tb-pZF" firstAttribute="leading" secondItem="WgJ-Er-rKN" secondAttribute="leadingMargin" id="K1f-17-dGf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j9S-tb-pZF" secondAttribute="trailing" id="kg9-Ee-gpw"/>
+                            <constraint firstItem="j9S-tb-pZF" firstAttribute="top" secondItem="gmF-ef-Ojb" secondAttribute="bottom" constant="8" id="vhE-jC-pPi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add item" id="sUD-J6-COT" userLabel="Add item"/>
                 </viewController>
