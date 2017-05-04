@@ -82,15 +82,19 @@ class Database {
         return concentOfDatabase
     }
     
-    func updateDatabase(row: Int) {
-        
+    func updateDoneDatabase(text: String) {
+        let update = todoTable.filter(todoText == text)
+
+        do {
+            try connection!.run(update.update(check <- true ))
+        } catch {
+            
+        }
+    
     }
     
     func dropRowFromDatabase(text: String) {
-        print(type(of: text))
-        print(text)
-        
-        
+
         let dropRow = todoTable.filter(todoText == text)
         do {
             try connection!.run(dropRow.delete())
