@@ -64,10 +64,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(concentOfDatabase[indexPath.row])
             
             Database.sharedinstance.dropRowFromDatabase(text: concentOfDatabase[indexPath.row])
-            
-            self.toDoTableView.reloadData()
             // handle delete (by removing the data from your array and updating the tableview)
         }
+        
+        concentOfDatabase = Database.sharedinstance.readDatabase()
+        
+        self.toDoTableView.reloadData()
     }
 
 
