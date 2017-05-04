@@ -51,5 +51,9 @@ class Database {
         }
     }
     
+//    func saveToDatabase(String) {
+//        
+//    }
+    
     
 }

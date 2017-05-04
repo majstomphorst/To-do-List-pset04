@@ -132,13 +132,13 @@
 				282F11971EB8CF9100DB053F /* AppDelegate.swift */,
 				282003791EB8D2DF00E59323 /* SQLite.xcodeproj */,
 				282F11991EB8CF9100DB053F /* ViewController.swift */,
-				283AFB9F1EBB2D0700F82A83 /* Database.swift */,
 				283AFB921EBA2EB700F82A83 /* AddViewController.swift */,
 				282F119B1EB8CF9100DB053F /* Main.storyboard */,
 				282F119E1EB8CF9100DB053F /* Assets.xcassets */,
 				282F11A01EB8CF9100DB053F /* LaunchScreen.storyboard */,
 				282F11A31EB8CF9100DB053F /* Info.plist */,
 				283AFB9B1EBA50B000F82A83 /* ToDoUITableViewCell.swift */,
+				283AFB9F1EBB2D0700F82A83 /* Database.swift */,
 			);
 			path = "To do List pset04";
 			sourceTree = "<group>";

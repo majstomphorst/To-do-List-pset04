@@ -15,10 +15,12 @@ class AddViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var inputField: UITextField!
     
+    var database: Database?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // print(type(of: databaase))
         // Do any additional setup after loading the view.
     }
 
@@ -30,7 +32,6 @@ class AddViewController: UIViewController {
     //MARK: actions
     @IBAction func saveButton(_ sender: UIButton) {
         
-       // let insert =
         self.label.text = "clicked!"
     }
     

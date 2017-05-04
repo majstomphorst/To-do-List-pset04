@@ -28,7 +28,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddViewController" {
+            let destVC = segue.destination as! AddViewController
+            destVC.database = database
+        }
+    }
     
     
     //MARK: tableView
