@@ -109,6 +109,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
+                                            <action selector="InputFieldBeginEdit:" destination="pzC-O6-cVY" eventType="editingDidBegin" id="tL8-3a-Bcc"/>
+                                            <action selector="inputFieldChanged:" destination="pzC-O6-cVY" eventType="editingChanged" id="1XR-0p-IMi"/>
                                             <action selector="saveButton:" destination="pzC-O6-cVY" eventType="primaryActionTriggered" id="CjU-8q-qe4"/>
                                         </connections>
                                     </textField>

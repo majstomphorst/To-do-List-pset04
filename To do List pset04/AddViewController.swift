@@ -15,12 +15,36 @@ class AddViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var inputField: UITextField!
     
+    // creating a key for userdefaults
+    let keyText = "1"
+    let keyboard = "2"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Database.sharedinstance.
+        
+        if let inputFieldText = UserDefaults.standard.value(forKey: keyText) {
+            inputField.text = inputFieldText as? String
+        }
+        
+        if let inputFieldText = UserDefaults.standard.value(forKey: keyboard) as? Bool{
+            
+            if inputFieldText {
+                self.inputField.becomeFirstResponder()
+                
+            }
+            
+        }
         
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisapare :P ")
+        self.label.text = ""
+        UserDefaults.standard.set("", forKey: keyText)
+        UserDefaults.standard.set(false, forKey: keyboard)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,9 +60,19 @@ class AddViewController: UIViewController {
         
         // emptying the label
         self.label.text = ""
-        
+        UserDefaults.standard.set("", forKey: keyText)
+        UserDefaults.standard.set(false, forKey: keyboard)
         // returing to previous viewController
         navigationController?.popViewController(animated: true)
+        
+    }
+    
+    @IBAction func inputFieldChanged(_ sender: UITextField) {
+        UserDefaults.standard.set(inputField.text, forKey: keyText)
+    }
+    
+    @IBAction func InputFieldBeginEdit(_ sender: UITextField) {
+        UserDefaults.standard.set(true, forKey: keyboard)
     }
     
 
