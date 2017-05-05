@@ -43,6 +43,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = toDoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ToDoUITableViewCell
         
+        let bools = Database.sharedinstance.readCheckDatabase()
+        
+        if bools[indexPath.row] {
+            cell.toDoItem.backgroundColor = UIColor.green
+        } else {
+            cell.toDoItem.backgroundColor = UIColor.red
+        }
+        
         cell.toDoItem.text = concentOfDatabase[indexPath.row]
         
         return cell
@@ -53,6 +61,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("you selected DidSelectRowAt\(indexPath.row)")
         
         Database.sharedinstance.updateDoneDatabase(text: concentOfDatabase[indexPath.row])
+        
+        self.toDoTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

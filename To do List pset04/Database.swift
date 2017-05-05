@@ -63,6 +63,25 @@ class Database {
         }
     }
     
+    func readCheckDatabase() -> [Bool] {
+        var concentOfCheckDatabase = [Bool]()
+        
+        do {
+            for item in try connection!.prepare(todoTable) {
+                // create dic? with the true false for ui green/ red and the text
+                concentOfCheckDatabase.append(item[check])
+                
+            }
+            
+        } catch {
+            print("read  (bool) database failed \(error)")
+        }
+        
+        return concentOfCheckDatabase
+    }
+    
+    
+    
     func readDatabase() -> [String] {
         
         var concentOfDatabase = [String]()

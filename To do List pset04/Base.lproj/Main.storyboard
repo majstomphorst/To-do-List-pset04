@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--To-Do-->
+        <!--ToDoList-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="To_do_List_pset04" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,14 +34,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="cell" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVo-3s-HEj">
-                                                    <rect key="frame" x="8" y="11" width="359" height="24.5"/>
+                                                    <rect key="frame" x="18" y="11" width="349" height="24.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="qVo-3s-HEj" firstAttribute="leading" secondItem="jdt-xr-4WV" secondAttribute="leadingMargin" id="5aG-wD-Szl"/>
+                                                <constraint firstItem="qVo-3s-HEj" firstAttribute="leading" secondItem="jdt-xr-4WV" secondAttribute="leadingMargin" constant="10" id="5aG-wD-Szl"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="qVo-3s-HEj" secondAttribute="bottom" id="XZs-KF-sIN"/>
                                                 <constraint firstItem="qVo-3s-HEj" firstAttribute="top" secondItem="jdt-xr-4WV" secondAttribute="topMargin" constant="3" id="aDN-uc-hbO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qVo-3s-HEj" secondAttribute="trailing" id="khu-py-XmG"/>
@@ -66,7 +66,7 @@
                             <constraint firstItem="Ebv-8R-oNr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rMr-hw-Cyw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="To-Do" id="JQE-aE-QES">
+                    <navigationItem key="navigationItem" title="ToDoList" id="JQE-aE-QES" userLabel="ToDoList">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WFT-4A-3xr">
                             <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -97,7 +97,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j9S-tb-pZF">
                                 <rect key="frame" x="16" y="72" width="343" height="100.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-3T-j6g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to do?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-3T-j6g">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -114,7 +114,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxT-Bx-HBU">
                                         <rect key="frame" x="0.0" y="70.5" width="343" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Save to ToDoList"/>
                                         <connections>
                                             <action selector="saveButton:" destination="pzC-O6-cVY" eventType="touchUpInside" id="8kS-ay-7pe"/>
                                         </connections>
