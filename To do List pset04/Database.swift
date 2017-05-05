@@ -16,6 +16,7 @@ class Database {
     //MARK: SQL Database
     private var  connection: Connection?
     
+    // creating Database properties
     private let todoTable = Table("todoTable")
     private let id = Expression<Int64>("id")
     private let check = Expression<Bool>("check")
@@ -26,7 +27,7 @@ class Database {
         setupDatabase()
     }
     
-    // sets up the database and creats the table in the database (it call the function createTable
+    // sets up the database and creats the table in the database (it call the function createTable)
     func setupDatabase() {
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -53,6 +54,7 @@ class Database {
         }
     }
     
+    // inserts a row in the database
     func rideDatabase(text: String, completed: Bool = false) {
         let insert = todoTable.insert(todoText <- text, check <- completed)
         
@@ -68,9 +70,7 @@ class Database {
         
         do {
             for item in try connection!.prepare(todoTable) {
-                // create dic? with the true false for ui green/ red and the text
                 concentOfCheckDatabase.append(item[check])
-                
             }
             
         } catch {
@@ -88,16 +88,13 @@ class Database {
         
         do {
             for item in try connection!.prepare(todoTable) {
-                
-                // create dic? with the true false for ui green/ red and the text
                 concentOfDatabase.append(item[todoText])
-                
-                // concentOfDatabase.append("id: \(item[id]),done: \(item[check]) ,name: \(item[todoText])")
             }
             
         } catch {
             print("read database failed \(error)")
         }
+        
         return concentOfDatabase
     }
     
@@ -129,7 +126,6 @@ class Database {
         let dropRow = todoTable.filter(todoText == text)
         do {
             try connection!.run(dropRow.delete())
-            print("is deleted. I hope")
         } catch {
             print("error with deleting")
         }

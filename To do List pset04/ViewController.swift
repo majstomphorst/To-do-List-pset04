@@ -14,17 +14,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: properties
     @IBOutlet weak var toDoTableView: UITableView!
     
+    // store the concent of the database only the "todoText" field
     var concentOfDatabase = [String]()
     
     override func viewDidAppear(_ animated: Bool) {
+        // read database "todoText" field
         concentOfDatabase = Database.sharedinstance.readDatabase()
         
+        // update the data
         self.toDoTableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,48 +45,50 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = toDoTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ToDoUITableViewCell
         
+        // get database info if a item is done on todo (true/false)
         let bools = Database.sharedinstance.readCheckDatabase()
         
+        // if a item is done make background green else red
         if bools[indexPath.row] {
             cell.toDoItem.backgroundColor = UIColor.green
         } else {
             cell.toDoItem.backgroundColor = UIColor.red
         }
         
+        // display text
         cell.toDoItem.text = concentOfDatabase[indexPath.row]
         
+        // return cell content and properties
         return cell
     }
     
     //MARK: actions
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you selected DidSelectRowAt\(indexPath.row)")
         
+        // switches the items bool value (done / todo)
         Database.sharedinstance.updateDoneDatabase(text: concentOfDatabase[indexPath.row])
         
+        // update's the table
         self.toDoTableView.reloadData()
     }
     
+    // checking if item may be edited always true
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // handle delete (by removing the data from the database and updating the tableview)
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            
-            // printing whats in the row
-            print(concentOfDatabase[indexPath.row])
-            
             Database.sharedinstance.dropRowFromDatabase(text: concentOfDatabase[indexPath.row])
-            // handle delete (by removing the data from your array and updating the tableview)
         }
         
         concentOfDatabase = Database.sharedinstance.readDatabase()
-        
         self.toDoTableView.reloadData()
     }
-
-
+    
 
 }
 

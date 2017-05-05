@@ -28,11 +28,16 @@ class AddViewController: UIViewController {
     
     //MARK: actions
     @IBAction func saveButton(_ sender: Any) {
+        
+        // adding what's in the text field to the database
         Database.sharedinstance.rideDatabase(text: inputField.text!)
         
         // error handeling!
         
+        // emptying the label
         self.label.text = ""
+        
+        // returing to previous viewController
         navigationController?.popViewController(animated: true)
     }
     
