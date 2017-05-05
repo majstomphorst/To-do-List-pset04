@@ -25,7 +25,8 @@ class Database {
     private init() {
         // creating the database
         setupDatabase()
-        setup()
+        createTable()
+        firstRun()
     }
     
     // sets up the database and creats the table in the database (it call the function createTable)
@@ -35,7 +36,6 @@ class Database {
         
         do {
             connection = try Connection("\(path)/db.sqlite3")
-            createTable()
         } catch {
             print("Cant connect to database:\(error)")
         }
@@ -54,7 +54,7 @@ class Database {
         }
     }
     
-    func setup() {
+    func firstRun() {
         rideDatabase(text: "press the plus icon to add a todo")
         rideDatabase(text: "Press me to change statu done/ todo")
         rideDatabase(text: "red is todo. Like me!")
