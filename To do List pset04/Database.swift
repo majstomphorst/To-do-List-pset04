@@ -30,7 +30,7 @@ class Database {
     func setupDatabase() {
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        // print(path)
+        print(path)
         
         do {
             connection = try Connection("\(path)/db.sqlite3")
@@ -83,11 +83,23 @@ class Database {
     }
     
     func updateDoneDatabase(text: String) {
-        let update = todoTable.filter(todoText == text)
-
+        var checking = Int()
+        
+        let change = todoTable.filter(todoText == text && check == false)
         do {
-            try connection!.run(update.update(check <- true ))
+            checking = try connection!.run(change.update(check <- true))
+            
         } catch {
+            print("update1 fout")
+        }
+        
+        if checking == 0 {
+            let change = todoTable.filter(todoText == text && check == true)
+            do {
+                checking = try connection!.run(change.update(check <- false))
+            } catch {
+                print("update2 fout")
+            }
             
         }
     

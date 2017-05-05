@@ -51,6 +51,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: actions
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("you selected DidSelectRowAt\(indexPath.row)")
+        
+        Database.sharedinstance.updateDoneDatabase(text: concentOfDatabase[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
