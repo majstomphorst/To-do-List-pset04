@@ -38,7 +38,6 @@ class AddViewController: UIViewController {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisapare :P ")
         self.label.text = ""
         UserDefaults.standard.set("", forKey: keyText)
         UserDefaults.standard.set(false, forKey: keyboard)
