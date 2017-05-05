@@ -25,13 +25,13 @@ class Database {
     private init() {
         // creating the database
         setupDatabase()
+        setup()
     }
     
     // sets up the database and creats the table in the database (it call the function createTable)
     func setupDatabase() {
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        print(path)
         
         do {
             connection = try Connection("\(path)/db.sqlite3")
@@ -52,6 +52,13 @@ class Database {
         }  catch {
             print("faild to create table\(error)")
         }
+    }
+    
+    func setup() {
+        rideDatabase(text: "press the plus icon to add a todo")
+        rideDatabase(text: "Press me to change statu done/ todo")
+        rideDatabase(text: "red is todo. Like me!")
+        rideDatabase(text: "green is done. Like me!",completed: true)
     }
     
     // inserts a row in the database

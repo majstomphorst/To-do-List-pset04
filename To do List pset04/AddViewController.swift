@@ -55,8 +55,6 @@ class AddViewController: UIViewController {
         // adding what's in the text field to the database
         Database.sharedinstance.rideDatabase(text: inputField.text!)
         
-        // error handeling!
-        
         // emptying the label
         self.label.text = ""
         UserDefaults.standard.set("", forKey: keyText)

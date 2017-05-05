@@ -25,16 +25,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.toDoTableView.reloadData()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     //MARK: tableView
     // number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
